@@ -1,8 +1,8 @@
 class CreateChildrens < ActiveRecord::Migration[6.0]
     def change
-      create_table :users do |t|
+      create_table :childrens do |t|
         t.string :name
-        t.integer :age
+        t.date :birthday
         t.string :gender
         t.belongs_to :user
   

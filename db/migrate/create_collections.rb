@@ -1,10 +1,8 @@
-class CreateUsers < ActiveRecord::Migration[6.0]
+class CreateCollections < ActiveRecord::Migration[6.0]
     def change
-      create_table :users do |t|
-        t.string :first_name
-        t.string :last_name
-        t.string :email
-        t.string :password_digest
+      create_table :collections do |t|
+        t.belongs_to :user
+        t.belongs_to :course
   
         t.timestamps
       end
