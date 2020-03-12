@@ -33,7 +33,7 @@ class CoursesController < ApplicationController
     def destroy
         course = Course.find(params[:id])
         if course.destroy
-            render json: {message: "Successfully deleted Child"} 
+            render json: {message: "Successfully deleted Course"} 
         else
             render json: {error: "Something went wrong"}
         end
@@ -42,7 +42,7 @@ class CoursesController < ApplicationController
     private
 
     def course_params
-        params.require(:course).permit(:title, :content, :quote)
+        params.require(:course).permit(:title, :content, :quote, :course_image)
     end
 
 end

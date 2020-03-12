@@ -13,5 +13,6 @@ toddlersswimming = Course.create(title: 'toddlersswimming', content: "Join Discu
 
 child1 = Children.create(name: "dfsf", age: 12, gender: "male")
 
+
 toddlers = Catagory.create(catagory_name: "toddler", image: "www.google.sdfksjldf" )
 

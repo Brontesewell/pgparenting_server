@@ -3,18 +3,18 @@ class ImagesController < ApplicationController
     skip_before_action :authorized
 
     def create
-        images = Image.new(image_params)
-        if images.save
-        render json: images
+        image = Image.new(image_params)
+        if image.save
+        render json: image
         else
             render json: {error: "Something went wrong"}
         end
     end
 
     def destroy
-        images = Image.find(params[:id])
-        if images.destroy
-            render json: {message: "Successfully deleted Child"} 
+        image = Image.find(params[:id])
+        if image.destroy
+            render json: {message: "Successfully deleted Image"} 
         else
             render json: {error: "Something went wrong"}
         end
@@ -23,7 +23,7 @@ class ImagesController < ApplicationController
     private
 
     def images_params
-        params.require(:images).permit(:image_url)
+        params.require(:image).permit(:image_url)
     end
 
 end

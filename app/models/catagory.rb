@@ -1,4 +1,4 @@
 class Catagory < ApplicationRecord
-    has_many :courses, through: :coursecatagories
-    has_many :coursecatagories, dependent: :destroy
+    has_many :courses, through: :course_catagories
+    has_many :course_catagories, dependent: :destroy
 end
