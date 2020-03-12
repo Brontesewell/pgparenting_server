@@ -21,11 +21,12 @@
 
 
 
-user1 = User.create!({first_name: 'Lucy', last_name: 'Lusdfcy', email: 'betty@gmail.com', password_digest: 'password'})
-user2 = User.create!({first_name: 'Bob', last_name: 'brown', email: 'bob@gmail.com', password_digest: 'password'})
+user1 = User.create( first_name: 'Lucy', last_name: 'Lusdfcy', email: 'bd1asd@gmail.com', password: 'password')
+user2 = User.create(first_name: 'Bob', last_name: 'brown', email: 'hjj1ha@gmail.com', password: 'password')
 
-child1 = Kid.create(name: "dfsf", birthday: 12/10/2000, gender: "male")
-child2 = Kid.create(name: "dfssdfsfsdffsf", birthday: 16/01/2010, gender: "female")
+child1 = Kid.create(name: "dfsf", gender: "male", user_id: user2.id)
+child2 = Kid.create(name: "dfssdfsfsdffsf", gender: "female", user_id: user1.id)
+child3 = Kid.create(name: "dfssdfsdsdfsfsdffsf", gender: "femddale", user_id: user1.id)
 
 course1 = Course.create( title: 'sleep', content: "Join Discussions asfsfsdf sdfsdf sdfnd Daily Questions in", quote: "werewr243324 234wer wer wer wer wer")
 course2 = Course.create( title: 'toddlersswimming', content: "Join Discussions and Daily Questions in", quote: "werwer wer wer wer wer")
