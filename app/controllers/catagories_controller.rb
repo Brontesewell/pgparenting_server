@@ -4,12 +4,12 @@ class CatagoriesController < ApplicationController
 
     def index
         @catagories = Catagory.all
-        render :index
+        render json: @catagories
     end
 
     def show
         @catagory = Catagory.find(params[:id]) 
-        render :show
+        render json: @catagory
     end
 
     private
@@ -17,6 +17,6 @@ class CatagoriesController < ApplicationController
     def catagory_params
         params.require(:catagory).permit(:id, :image, :catagory_name, :catagory_title, :description, :sub_catagories_attributes => [ :id, :title, :catagory_id], :courses_attributes => [ :id, :title, :content, :quote, :course_image, :sub_catagory_id, :catagory_id])
     end   
-  end
+
 
 end

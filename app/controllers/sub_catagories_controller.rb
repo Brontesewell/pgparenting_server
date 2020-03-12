@@ -3,29 +3,29 @@ class SubCatagoriesController < ApplicationController
     skip_before_action :authorized
 
     def index
-        @sub_catagories = SubCatagory.all
-        render :index
+        @subcatagories = SubCatagory.all
+        render json: @subcatagories
     end
 
     def show
-        @sub_catagory = SubCatagory.find(params[:id]) 
-        render :show
+        @subcatagory = SubCatagory.find(params[:id]) 
+        render json: @subcatagory
     end
 
     
     def create
-        sub_catagory = SubCatagory.new(sub_catagory_params)
-        if sub_catagory.save
-            render json: sub_catagory
+        subcatagory = SubCatagory.new(subcatagory_params)
+        if subcatagory.save
+            render json: subcatagory
         else
             render json: {error: "Something went wrong"}
         end
     end
     
     def update
-        sub_catagory = SubCatagory.find(params[:id])
-        if sub_catagory.update(sub_catagory_params)
-        render json: sub_catagory 
+        subcatagory = SubCatagory.find(params[:id])
+        if subcatagory.update(subcatagory_params)
+        render json: subcatagory 
         else
             render json: {error: "Something went wrong"}
         end
@@ -33,8 +33,8 @@ class SubCatagoriesController < ApplicationController
 
 
     def destroy
-        sub_catagory = SubCatagory.find(params[:id])
-        if sub_catagory.destroy
+        subcatagory = SubCatagory.find(params[:id])
+        if subcatagory.destroy
             render json: {message: "Successfully deleted Sub Catagory"} 
         else
             render json: {error: "Something went wrong"}
@@ -47,8 +47,8 @@ class SubCatagoriesController < ApplicationController
     #     params.require(:sub_catagory).permit(:title, :catagory_id)
     # end
 
-    def sub_catagory_params
-        params.require(:sub_catagory).permit(:title, :courses_attributes => [ :id, :title, :content, :quote, :course_image, :sub_catagory_id, :catagory_id])
+    def subcatagory_params
+        params.require(:subcatagory).permit(:title, :courses_attributes => [ :id, :title, :content, :quote, :course_image, :sub_catagory_id, :catagory_id])
     end  
 
 end

@@ -21,18 +21,18 @@
 
 
 
-user1 = User.create!({first_name: 'Lucy', last_name: 'Lusdfcy', email: 'betty@gmail.com', password: 'password'})
-user2 = User.create!({first_name: 'Bob', last_name: 'brown', email: 'bob@gmail.com', password: 'password'})
+user1 = User.create!({first_name: 'Lucy', last_name: 'Lusdfcy', email: 'betty@gmail.com', password_digest: 'password'})
+user2 = User.create!({first_name: 'Bob', last_name: 'brown', email: 'bob@gmail.com', password_digest: 'password'})
 
-child1 = Children.create(name: "dfsf", birthday: 12/10/2000, gender: "male", user_id: 1)
-child2 = Children.create(name: "dfssdfsfsdffsf", birthday: 16/01/2010, gender: "female", user_id: 2)
+child1 = Kid.create(name: "dfsf", birthday: 12/10/2000, gender: "male")
+child2 = Kid.create(name: "dfssdfsfsdffsf", birthday: 16/01/2010, gender: "female")
 
-course1 = Course.create( id: 1, title: 'sleep', content: "Join Discussions asfsfsdf sdfsdf sdfnd Daily Questions in", quote: "werewr243324 234wer wer wer wer wer", catagory_id: 2, sub_catagory_id: 2)
-course2 = Course.create( id: 2, title: 'toddlersswimming', content: "Join Discussions and Daily Questions in", quote: "werwer wer wer wer wer", catagory_id: 1, sub_catagory_id: 1)
+course1 = Course.create( title: 'sleep', content: "Join Discussions asfsfsdf sdfsdf sdfnd Daily Questions in", quote: "werewr243324 234wer wer wer wer wer")
+course2 = Course.create( title: 'toddlersswimming', content: "Join Discussions and Daily Questions in", quote: "werwer wer wer wer wer")
 
-subcatagory1 = SubCatagory.create( id: 1, title: "behaviour", catagory_id: 1)
-subcatagory2 = SubCatagory.create( id: 2, title: "sport", catagory_id: 2)
+subcatagory1 = SubCatagory.create( title: "behaviour")
+subcatagory2 = SubCatagory.create( title: "sport")
 
-catagory1 = Catagory.create( id: 1, catagory_name: "toddler", catagory_title: "0-2years old" image: "www.google.sdfksjldf" )
-catagory2 = Catagory.create( id: 2, catagory_name: "infant", catagory_title: "2-4years old" image: "www.345fdssdfgoogle.sdfksjldf" )
+catagory1 = Catagory.create( catagory_name: "toddler", catagory_title: "0-2years old", image: "www.google.sdfksjldf" )
+catagory2 = Catagory.create( catagory_name: "infant", catagory_title: "2-4years old", image: "www.345fdssdfgoogle.sdfksjldf" )
 

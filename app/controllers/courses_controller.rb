@@ -4,12 +4,12 @@ class CoursesController < ApplicationController
 
     def index
         @courses = Course.all
-        render :index
+        render json: @courses
     end
 
     def show
         @course = Course.find(params[:id]) 
-        render :show
+        render json: @course
     end
 
     def create
