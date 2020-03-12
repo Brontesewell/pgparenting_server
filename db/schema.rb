@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_12_171051) do
+ActiveRecord::Schema.define(version: 2020_03_12_220927) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,9 +64,17 @@ ActiveRecord::Schema.define(version: 2020_03_12_171051) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "catagory_sub_catagories", force: :cascade do |t|
+    t.bigint "sub_catagory_id"
+    t.bigint "catagory_id"
+    t.index ["catagory_id"], name: "index_catagory_sub_catagories_on_catagory_id"
+    t.index ["sub_catagory_id"], name: "index_catagory_sub_catagories_on_sub_catagory_id"
+  end
+
   create_table "collections", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "course_id"
+    t.boolean "collected"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["course_id"], name: "index_collections_on_course_id"
@@ -106,10 +114,8 @@ ActiveRecord::Schema.define(version: 2020_03_12_171051) do
 
   create_table "sub_catagories", force: :cascade do |t|
     t.string "title"
-    t.bigint "catagory_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["catagory_id"], name: "index_sub_catagories_on_catagory_id"
   end
 
   create_table "users", force: :cascade do |t|

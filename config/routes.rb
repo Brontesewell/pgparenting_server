@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :courses
   resources :sub_catagories
   resources :catagories
+  resources :collections
 end

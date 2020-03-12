@@ -1,8 +1,11 @@
 class SubCatagory < ApplicationRecord 
     
-    has_many :courses
-    belongs_to :catagory
+    has_many :courses, dependent: :destroy
 
-    accepts_nested_attributes_for :courses
+    has_many :catagory_sub_catagories, dependent: :destroy
+    
+    has_many :catagories, through: :catagory_sub_catagories
+
+
 
 end

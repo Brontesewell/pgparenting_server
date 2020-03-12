@@ -1,6 +1,7 @@
 class SubCatagorySerializer < ActiveModel::Serializer
-    attributes :id, :title, :catagory_id
+    attributes :id, :title
 
-    belongs_to :catagory
     has_many :courses
+    has_many :catagories
+
   end

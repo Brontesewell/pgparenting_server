@@ -1,6 +1,16 @@
 class CollectionsController < ApplicationController
 
     skip_before_action :authorized
+    def index
+        @collections = Collection.all
+        render json: @collections
+    end
+
+    def show
+        @collection = Collection.find(params[:id])
+        render json: @collection
+    end
+
 
     def create
         collection = Collection.new(collection_params)
@@ -23,7 +33,7 @@ class CollectionsController < ApplicationController
     private
 
     def collection_params
-        params.require(:collection).permit(:user_id, :course_id)
+        params.require(:collection).permit(:collected, :user_id, :course_id)
     end
 
 end
