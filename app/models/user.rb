@@ -1,7 +1,9 @@
 class User < ApplicationRecord
     has_secure_password
 
-    has_many :childrens
+    has_many :childrens, dependent: :destroy
+    has_many :collections, :dependent: :destroy
+    
     
     has_many :courses, through: :collections
 
