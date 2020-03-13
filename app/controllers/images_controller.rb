@@ -1,6 +1,6 @@
 class ImagesController < ApplicationController
 
-    skip_before_action :authorized
+    skip_before_action :verify_authenticity_token, :authorized
 
     def create
         image = Image.new(image_params)

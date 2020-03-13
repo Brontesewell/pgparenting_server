@@ -1,6 +1,6 @@
 class SubCatagoriesController < ApplicationController
 
-    skip_before_action :authorized
+    skip_before_action :verify_authenticity_token, :authorized
 
     def index
         @subcatagories = SubCatagory.all
