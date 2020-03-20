@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-    skip_before_action :verify_authenticity_token, :authorized, only: [:index, :create]
+    skip_before_action :verify_authenticity_token, only: [:index, :create, :update]
+    skip_before_action :authorized, only: [:update]
+    # protect_from_forgery prepend: true, with: :exception
 
 
     def index
@@ -23,8 +25,10 @@ class UsersController < ApplicationController
     end
 
     def update
+        # byebug
         user = User.find(params[:id])
-        if user.update(user_params)
+
+        if user.update!(user_params)
             render json: user
         else
             render json: {error: "Something went wrong"}
@@ -39,6 +43,18 @@ class UsersController < ApplicationController
             render json: {error: "Something went wrong"}
         end
     end
+
+
+    def find_user_and_destroy
+        user = User.
+        coll = Collection.
+        if collection.destroy
+            render json: {message: "Successfully deleted Users Collection"} 
+        else
+            render json: {error: "Something went wrong"}
+        end
+    end
+
 
     private
 
