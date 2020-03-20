@@ -1,5 +1,5 @@
 class KidsController < ApplicationController
-    skip_before_action :verify_authenticity_token, only: [:index, :create, :update]
+    skip_before_action :verify_authenticity_token, only: [:index, :create, :update, :destroy]
     skip_before_action :authorized, only: [:update]
 
     def index
@@ -13,6 +13,7 @@ class KidsController < ApplicationController
     end
 
     def create
+        
         kid = Kid.new(kid_params)
         if kid.save
         render json: kid 
@@ -33,6 +34,7 @@ class KidsController < ApplicationController
     end
 
     def destroy
+        # byebug
         kid = Kid.find(params[:id])
         if kid.destroy
             render json: {message: "Successfully deleted Child"} 

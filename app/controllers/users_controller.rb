@@ -45,15 +45,6 @@ class UsersController < ApplicationController
     end
 
 
-    def find_user_and_destroy
-        user = User.
-        coll = Collection.
-        if collection.destroy
-            render json: {message: "Successfully deleted Users Collection"} 
-        else
-            render json: {error: "Something went wrong"}
-        end
-    end
 
 
     private
