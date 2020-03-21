@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   post '/login', to: 'auth#create'
   get '/profile', to: 'users#profile'
   get '/reauth', to: 'auth#re_auth'
-  delete '/collectiondelete', to: 'collections#find_user_and_destroy'
 
 
 
