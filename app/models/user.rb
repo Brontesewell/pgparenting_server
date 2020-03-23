@@ -2,7 +2,7 @@ class User < ApplicationRecord
     has_secure_password
 
     has_many :messages
-    has_many :rooms, through: :messages
+    has_many :rooms, -> { distinct }, through: :messages
     
     
     has_many :kids

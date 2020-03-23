@@ -4,10 +4,10 @@ class AuthController < ApplicationController
    
     def create
       @user = User.find_by(email: user_login_params[:email])
-      rooms = Room.all
+      
       if @user && @user.authenticate(user_login_params[:password])
         token = encode_token({ user_id: @user.id })
-        render json: { user: UserSerializer.new(@user), jwt: token}, status: :accepted
+        render json: { user: UserSerializer.new(@user), jwt: token, user_rooms: RoomSerializer.new(@user.rooms)}, status: :accepted
       else
         render json: { error: 'Invalid email or password' }, status: :unauthorized
       end
