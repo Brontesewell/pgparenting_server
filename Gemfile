@@ -27,6 +27,10 @@ gem 'active_model_serializers', '~> 0.10.0'
 gem 'rack-cors'
 gem "jwt", "~> 2.2"
 gem 'bcrypt', '~> 3.1.7'
+
+gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+gem 'activestorage'
+gem 'fast_jsonapi'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 

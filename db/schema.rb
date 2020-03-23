@@ -112,6 +112,21 @@ ActiveRecord::Schema.define(version: 2020_03_12_220927) do
     t.index ["user_id"], name: "index_kids_on_user_id"
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "room_id"
+    t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "rooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "description"
+  end
+
   create_table "sub_catagories", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", precision: 6, null: false
