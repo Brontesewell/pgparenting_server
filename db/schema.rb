@@ -113,6 +113,14 @@ ActiveRecord::Schema.define(version: 2020_03_12_220927) do
     t.date "birthday"
     t.string "gender"
     t.bigint "user_id"
+    t.integer "behaviour_progress"
+    t.integer "behaviour_score"
+    t.integer "sport_progress"
+    t.integer "sport_score"
+    t.integer "academic_progress"
+    t.integer "academic_score"
+    t.integer "character_progress"
+    t.integer "character_score"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_kids_on_user_id"

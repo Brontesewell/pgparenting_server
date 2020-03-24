@@ -46,7 +46,7 @@ class KidsController < ApplicationController
     private
 
     def kid_params
-        params.require(:kid).permit(:id, :birthday, :name, :gender, :user_id)
+        params.require(:kid).permit(:id, :birthday, :name, :gender, :user_id, :behaviour_progress, :behaviour_score, :sport_progress, :sport_score, :academic_progress, :academic_score, :character_progress, :character_score)
     end
 
 end
