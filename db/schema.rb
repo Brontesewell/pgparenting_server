@@ -120,12 +120,10 @@ ActiveRecord::Schema.define(version: 2020_03_12_220927) do
 
   create_table "messages", force: :cascade do |t|
     t.string "text"
-    t.bigint "user_id"
     t.bigint "conversation_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["conversation_id"], name: "index_messages_on_conversation_id"
-    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "sub_catagories", force: :cascade do |t|

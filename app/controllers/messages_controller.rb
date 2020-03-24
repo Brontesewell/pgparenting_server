@@ -5,12 +5,12 @@ class MessagesController < ApplicationController
     def create
       message = Message.new(message_params)
       conversation = Conversation.find(message_params[:conversation_id])
-      user = User.find(message_params[:user_id])
+      # user = User.find(params[:user_id])
       if message.save
         serialized_data = ActiveModelSerializers::Adapter::Json.new(
           MessageSerializer.new(message)
         ).serializable_hash
-        MessagesChannel.broadcast_to conversation, user, serialized_data
+        MessagesChannel.broadcast_to conversation, serialized_data
         head :ok
       end
     end
