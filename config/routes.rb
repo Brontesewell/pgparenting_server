@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :users
   resources :kids
+  resources :journals
   resources :courses
   resources :sub_catagories
   resources :catagories

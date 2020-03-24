@@ -108,6 +108,15 @@ ActiveRecord::Schema.define(version: 2020_03_12_220927) do
     t.index ["course_id"], name: "index_images_on_course_id"
   end
 
+  create_table "journals", force: :cascade do |t|
+    t.text "text"
+    t.bigint "kid_id"
+    t.datetime "date_now"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["kid_id"], name: "index_journals_on_kid_id"
+  end
+
   create_table "kids", force: :cascade do |t|
     t.string "name"
     t.date "birthday"
