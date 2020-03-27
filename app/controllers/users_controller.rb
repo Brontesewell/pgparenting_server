@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     skip_before_action :verify_authenticity_token, only: [:index, :create, :update]
-    skip_before_action :authorized, only: [:update]
+    skip_before_action :authorized, only: [:update, :create]
     # protect_from_forgery prepend: true, with: :exception
 
 
