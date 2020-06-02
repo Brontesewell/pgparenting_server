@@ -81,6 +81,17 @@ ActiveRecord::Schema.define(version: 2020_03_12_220999) do
     t.index ["user_id"], name: "index_collections_on_user_id"
   end
 
+  create_table "contacts", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "f_name"
+    t.string "l_name"
+    t.string "email"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_contacts_on_user_id"
+  end
+
   create_table "conversations", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false

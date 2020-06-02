@@ -10,6 +10,8 @@ class User < ApplicationRecord
     has_many :collections, dependent: :destroy
     has_many :collections
     has_many :courses, through: :collections
+    
+    has_many :contacts
 
     validates :email, presence: true
     validates :email, uniqueness: true

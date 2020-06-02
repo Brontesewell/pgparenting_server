@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :kids
   resources :journals
   resources :courses
+  resources :contacts
   resources :sub_catagories
   resources :catagories
   resources :collections
